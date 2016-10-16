@@ -227,10 +227,10 @@ SOCIAL_AUTH_USER_FIELDS = ['username', 'email', 'full_name']
 SOCIAL_AUTH_RAISE_EXCEPTIONS = True
 
 # Set these to the correct values for your OAuth2/OpenID Connect provider (e.g., devstack)
-SOCIAL_AUTH_EDX_OIDC_KEY = 'replace-me'
-SOCIAL_AUTH_EDX_OIDC_SECRET = 'replace-me'
-SOCIAL_AUTH_EDX_OIDC_URL_ROOT = 'replace-me'
-SOCIAL_AUTH_EDX_OIDC_ID_TOKEN_DECRYPTION_KEY = SOCIAL_AUTH_EDX_OIDC_SECRET
+SOCIAL_AUTH_EDX_OIDC_KEY = os.environ.get('JWT_AUTH.JWT_ISSUERS[1].AUDIENCE', 'SET-ME-PLEASE')
+SOCIAL_AUTH_EDX_OIDC_SECRET = os.environ.get('JWT_AUTH.JWT_ISSUERS[1].SECRET_KEY', 'SET-ME-PLEASE')
+SOCIAL_AUTH_EDX_OIDC_URL_ROOT = os.environ.get('JWT_AUTH.JWT_ISSUERS[1].ISSUER', 'SET-ME-PLEASE')
+SOCIAL_AUTH_EDX_OIDC_ID_TOKEN_DECRYPTION_KEY = os.environ.get('JWT_AUTH.JWT_ISSUERS[1].SECRET_KEY', 'SET-ME-PLEASE')
 
 # Request the user's permissions in the ID token
 EXTRA_SCOPE = ['permissions']
