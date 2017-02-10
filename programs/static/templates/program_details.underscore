@@ -39,9 +39,15 @@
                     <span class="field-message-content"></span>
                 </div>
             </div>
+
+            <div class="js-inline-edit field">
+                <span class="js-model-value copy copy-base subtitle"><%- featured %></span>
+                <label for="program-featured" class="sr-only"><%= gettext('Featured') %></label>
+                <input type="checkbox" value="1" id="program-featured" class="program-featured field-input" name="featured" data-field="featured">
+            </div>
+
         </div>
 
-        BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB
 
         <div class="layout-col layout-col-a">
           <% if ( status === 'unpublished' ) { %>
