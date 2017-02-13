@@ -84,6 +84,8 @@ class Program(TimeStampedModel):
         max_length=1000,
     )
 
+    featured = models.BooleanField(default=False)
+
     def save(self, *a, **kw):
         """
         Verify that the marketing slug is not empty if the user has attempted

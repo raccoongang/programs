@@ -23,7 +23,8 @@ define([
                 'blur .js-inline-edit input': 'checkEdit',
                 'click .js-add-course': 'addCourse',
                 'click .js-enable-edit': 'editField',
-                'click .js-publish-program': 'confirmPublish'
+                'click .js-publish-program': 'confirmPublish',
+                'change .js-checkbox': 'checkboxHandler'
             },
 
             tpl: _.template( ListTpl ),
@@ -88,6 +89,23 @@ define([
                     if ( this.model.isValid( true ) ) {
                         this.model.patch( data );
                         $span.html( value );
+                    }
+                }
+            },
+
+            checkboxHandler: function(event) {
+                var $input = $(event.target),
+                    value = $input.prop("checked"),
+                    key = $input.data('field'),
+                    data = {};
+
+                data[key] = value;
+
+                if (this.model.get(key) !== value ) {
+                    this.model.set(data);
+
+                    if (this.model.isValid(true)) {
+                        this.model.patch(data);
                     }
                 }
             },
