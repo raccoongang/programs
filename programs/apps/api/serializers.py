@@ -261,7 +261,7 @@ class ProgramSerializer(serializers.ModelSerializer):
         model = models.Program
         fields = (
             'id', 'name', 'subtitle', 'category', 'status', 'marketing_slug', 'organizations', 'course_codes',
-            'created', 'modified', 'banner_image_urls', 'uuid',
+            'created', 'modified', 'banner_image_urls', 'uuid', 'featured',
         )
         read_only_fields = ('id', 'created', 'modified', 'banner_image_urls', 'uuid',)
 
