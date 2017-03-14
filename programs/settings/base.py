@@ -111,7 +111,8 @@ REST_FRAMEWORK = {
 
 # MEDIA CONFIGURATION
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#media-root
-MEDIA_ROOT = root('media')
+#MEDIA_ROOT = root('media')
+MEDIA_ROOT = '/edx/var/programs/media/'
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#media-url
 MEDIA_URL = '/media/'
