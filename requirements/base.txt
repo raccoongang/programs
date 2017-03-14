@@ -16,3 +16,4 @@ Markdown==2.6.2
 piexif==1.0.3
 pillow==3.4.2
 pytz==2015.4
+python-social-auth==0.2.21
